@@ -9,7 +9,7 @@
 
 let
   cfg = config.programs.nix-secure-enclave-key;
-  package = self.packages.${pkgs.system}.default;
+  package = self.packages.${pkgs.stdenv.hostPlatform.system}.default;
   primaryUser = config.system.primaryUser;
   primaryUserHome = lib.optionalString (primaryUser != null) config.system.primaryUserHome;
   resolve-key-file =

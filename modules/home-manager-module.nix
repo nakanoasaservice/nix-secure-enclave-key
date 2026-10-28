@@ -9,7 +9,7 @@
 
 let
   cfg = config.programs.nix-secure-enclave-key;
-  package = self.packages.${pkgs.system}.default;
+  package = self.packages.${pkgs.stdenv.hostPlatform.system}.default;
   security-key-provider = "/usr/lib/ssh-keychain.dylib";
   resolve-key-file =
     keyFile:
